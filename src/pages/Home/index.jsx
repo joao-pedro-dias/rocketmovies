@@ -1,7 +1,6 @@
-import { Header } from '../../components/Header';
+import { Header } from "../../components/Header";
 import { Container } from "./styles";
 import { Content } from "../../components/Content";
-import { Card } from '../../components/Card';
 
 export function Home(){
   return(
@@ -10,8 +9,6 @@ export function Home(){
 
       <main>
         <Content>
-          <Card/>  
-          
         </Content>
         
       </main>

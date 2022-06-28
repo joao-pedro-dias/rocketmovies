@@ -16,8 +16,6 @@ export function Header(){
                 <img
                     src="https://github.com/joao-pedro-dias.png"
                     alt="Foto do usuário" />
-
-
             </Profile>
             
         </Container>
