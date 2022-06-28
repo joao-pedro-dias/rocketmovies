@@ -1,32 +1,22 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+    margin-top: 10px;
+    padding: 32px;
+
     width: 100%;
     height: 230px;
-
-    margin-top: 10px;
-    border-radius: 10px;
-    padding: 32px;
     
     background: #272024;
+    border-radius: 10px;
+    color: ${({ theme }) => theme.colors.white};
 
-    > footer{
-        width: 100%;
-        display: flex;
-        margin-top: 24px;
+    > h2{
+        padding-bottom: 15px;
+    }
+
+    > p{
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
 `;
-
-export const TitleCard = styled.h2`
-    padding-bottom: 15px;
-    color: ${({ theme }) => theme.colors.white};
-`;
-
-export const Paragraph = styled.p`
-    padding-top: 15px;
-    padding-bottom: 15px;
-    flex-wrap: wrap;
-    display: flex;
-    flex-direction: column;
-`;
-

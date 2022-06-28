@@ -1,7 +1,7 @@
 export default {
     colors: {
       background_900: "#262529",
-      background_800: "#312E38",
+      background_800: "#1C1B1E",
       background_700: "#262529",
   
       white: "#F4EDE8",

@@ -1,13 +1,15 @@
 import { Container, Profile  } from './styles';
 import { Input } from '../Input';
-import { TitleHeader } from '../Content/styles';
 
 export function Header(){
     return(
         <Container>
-            <TitleHeader>RocketMovies</TitleHeader>
+            <h1>RocketMovies</h1>
+            
             <Input/>
+
             <Profile>
+
                 <div>
                     <strong>João Pedro Dias</strong>
                     <span>Sair</span>
@@ -15,9 +17,10 @@ export function Header(){
 
                 <img
                     src="https://github.com/joao-pedro-dias.png"
-                    alt="Foto do usuário" />
+                    alt="Foto do usuário"
+                />
+                
             </Profile>
-            
         </Container>
     );
 }

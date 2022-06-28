@@ -1,22 +1,23 @@
-import { Container, TitleCard, Paragraph } from "./styles";
+import { Container } from "./styles";
 import { Tag } from "../Tag";
 
 export function Card( { title, icon: Icon, text }){
     return(
         <Container>
-            <TitleCard>{title}</TitleCard>
-            <Icon size={20}/>
-            <Icon size={20}/>
-            <Icon size={20}/>
-            <Icon size={20}/>
-            <Icon size={20}/>
+            <h2>{title}</h2>
 
-            <Paragraph>
-                {text}
-            </Paragraph>
+            <Icon fill={"pink"} size={20}/>
+            <Icon fill={"pink"} size={20}/>
+            <Icon fill={"pink"} size={20}/>
+            <Icon fill={"pink"} size={20}/>
+            <Icon fill={"dark"} size={20}/>
+
+            <p>{text}</p>
+
             <Tag title="Ficção Científica"/>
             <Tag title="Drama"/>
             <Tag title="Família"/>
+
         </Container>
     );
 }

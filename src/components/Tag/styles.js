@@ -5,6 +5,6 @@ export const Container = styled.span`
   padding: 5px 14px;
   border-radius: 5px;
   margin-right: 6px;
-  color: ${({ theme }) => theme.colors.background_900};
-  background-color: ${({ theme }) => theme.colors.pink};
+  color: ${({ theme }) => theme.colors.white};
+  background: #312E38;
 `;
