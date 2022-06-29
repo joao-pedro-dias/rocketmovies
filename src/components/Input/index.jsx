@@ -1,9 +1,9 @@
-import { Container } from "./styles";
+import { Container } from './styles';
 
-export function Input(){
+export function Input({ icon: Icon, ...rest }){
     return(
-        <Container
-            placeholder="Pesquisar pelo título"
-        />
-    );
+        <Container {...rest}>
+            {Icon && <Icon/>}
+        </Container>
+    )
 }
