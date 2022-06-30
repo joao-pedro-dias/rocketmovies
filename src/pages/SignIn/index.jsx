@@ -1,8 +1,7 @@
-import { Container, Form, ButtonForm } from "./styles";
+import { Container, Form, ButtonForm, Background } from "./styles";
 import { Input } from "../../components/Input";
-import { RiMailLine, RiLock2Line } from "react-icons/ri";
 
-export function SigIn(){
+export function SignIn(){
     return(
 
         <Container>
@@ -15,13 +14,11 @@ export function SigIn(){
                 <Input
                     placeholder="E-mail"
                     type="text"
-                    icon={RiMailLine}
                 />
                 
                 <Input
                     placeholder="Senha"
                     type="password"
-                    icon={RiLock2Line}
                 />
 
                 <ButtonForm>
@@ -32,6 +29,8 @@ export function SigIn(){
                     Criar conta
                 </a>
             </Form>
+
+            <Background/>
         </Container>
     );
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
-import { SigIn } from './pages/SigIn';
+import { SignUp } from './pages/SignUp';
 // import { Home } from './pages/Home';
 
 import theme from './styles/theme';
@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={ theme }>
       <GlobalStyles />
-      <SigIn />
+      <SignUp />
     </ThemeProvider>
   </React.StrictMode>
 )
