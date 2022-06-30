@@ -6,7 +6,7 @@ export const Container = styled.header`
 
     height: 105px;
     width: 100%;
-    padding: 0 80px;
+    padding: 0 150px;
 
     border-bottom-width: 1px;
     border-bottom-style: solid;

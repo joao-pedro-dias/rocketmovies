@@ -6,5 +6,5 @@ export const Container = styled.div`
     gap: 24px;
     justify-content: space-between;
     align-items: baseline;
-    padding: 80px 80px 80px;
+    padding: 80px 150px 80px;
 `;

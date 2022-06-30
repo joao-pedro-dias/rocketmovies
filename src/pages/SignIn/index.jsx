@@ -1,5 +1,6 @@
-import { Container, Form, ButtonForm, Background } from "./styles";
+import { Container, Form, Background } from "./styles";
 import { Input } from "../../components/Input";
+import { Button } from "../../components/Button";
 
 export function SignIn(){
     return(
@@ -21,9 +22,9 @@ export function SignIn(){
                     type="password"
                 />
 
-                <ButtonForm>
-                    Entrar
-                </ButtonForm>
+                <Button
+                    title="Entrar"
+                />
 
                 <a href="#">
                     Criar conta

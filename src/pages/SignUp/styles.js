@@ -53,7 +53,7 @@ export const ButtonForm = styled.button`
     justify-content: space-evenly;
     align-items: center;
 
-    width: 100%;
+    width: 310px;
     height: 56px;
     padding: 0 16px;
     margin-top: 16px;

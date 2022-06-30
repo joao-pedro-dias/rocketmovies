@@ -14,7 +14,6 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
 
     text-align: center;
 
@@ -37,7 +36,7 @@ export const Form = styled.form`
         display: flex;
         align-items: flex-start;
         font-size: 14px;
-        color: ${({ theme }) => theme.colors.pink}
+        color: ${({ theme }) => theme.colors.white}
     }
 
     > a{
@@ -46,26 +45,6 @@ export const Form = styled.form`
         color: ${({ theme }) => theme.colors.pink}
     }
 
-`;
-
-export const ButtonForm = styled.button`
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-
-    width: 100%;
-    height: 56px;
-    padding: 0 16px;
-    margin-top: 16px;
-    
-    background-color: ${({ theme }) => theme.colors.pink};
-    color: ${({ theme }) => theme.colors.background_800};
-    
-    font-weight: 500;
-    font-size: 16px;
-    
-    border: 0;
-    border-radius: 10px;
 `;
 
 export const Background = styled.div`
