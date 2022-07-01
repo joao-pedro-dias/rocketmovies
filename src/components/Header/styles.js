@@ -17,12 +17,14 @@ export const Container = styled.header`
 
     > h1 {
         color: ${({ theme }) => theme.colors.pink};
+        margin-right: 100px;
     }
 `;
 
 export const Profile = styled.div`
     display: flex;
     align-items: center;
+    margin-left: 100px;
 
     > img {
         width: 56px;
@@ -33,10 +35,11 @@ export const Profile = styled.div`
     > div{
         display: flex;
         flex-direction: column;
-        margin-right: 16px;
+        margin-right: 20px;
         line-height: 24px;
-
+        
         span{
+            width: 150px;
             font-size: 14px;
             color: ${({ theme }) => theme.colors.gray_100};
             display: flex;
@@ -44,6 +47,9 @@ export const Profile = styled.div`
         }
 
         strong{
+            display: flex;
+            justify-content: flex-end;
+            width: 150px;
             font-size: 18px;
             color: ${({ theme }) => theme.colors.white};
         }

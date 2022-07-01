@@ -6,7 +6,9 @@ export function Header(){
         <Container>
             <h1>RocketMovies</h1>
             
-            <Input placeholder="Pesquisar pelo título"/>
+            <Input className="input"
+                placeholder="Pesquisar pelo título"
+            />
 
             <Profile>
 
