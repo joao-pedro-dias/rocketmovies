@@ -1,6 +1,6 @@
 import { Container, Form, ButtonForm, Background } from "./styles";
 import { Input } from "../../components/Input";
-import { RiArrowLeftLine } from "react-icons/ri";
+import { RiUser3Line, RiArrowLeftLine, RiMailLine, RiLock2Line } from "react-icons/ri";
 import { Link } from "../../components/Link";
 
 export function SignUp(){
@@ -16,16 +16,19 @@ export function SignUp(){
                 <Input
                     placeholder="Nome"
                     type="text"
+                    icon={RiUser3Line}
                 />
 
                 <Input
                     placeholder="E-mail"
                     type="text"
+                    icon={RiMailLine}
                 />
                 
                 <Input
                     placeholder="Senha"
                     type="password"
+                    icon={RiLock2Line}
                 />
 
                 <ButtonForm>

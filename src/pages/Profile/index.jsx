@@ -1,6 +1,6 @@
 import { Container, Form, Avatar } from "./styles";
 import { Link } from "../../components/Link";
-import { RiArrowLeftLine, RiCameraLine } from "react-icons/ri";
+import { RiArrowLeftLine, RiCameraLine, RiMailLine, RiUser3Line, RiLock2Line } from "react-icons/ri";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 
@@ -34,21 +34,25 @@ export function Profile(){
                 <Input
                     placeholder="Nome"
                     type="text"
+                    icon={RiUser3Line}
                 />
 
                 <Input
                     placeholder="E-mail"
                     type="text"
+                    icon={RiMailLine}
                 />
 
                 <Input
                     placeholder="Senha atual"
                     type="password"
+                    icon={RiLock2Line}
                 />
 
                 <Input
                     placeholder="Nova senha"
                     type="password"
+                    icon={RiLock2Line}
                 />
 
                 <Button

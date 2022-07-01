@@ -30,7 +30,7 @@ export const Form = styled.form`
     max-width: 300px;
     margin: auto;
 
-    > Input:nth-child(3){
+    > div:nth-child(3){
         margin-top: 24px;
     }
 `;
