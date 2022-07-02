@@ -14,10 +14,11 @@ export function Card( { title, icon: Icon, text }){
 
             <p>{text}</p>
 
-            <Tag title="Ficção Científica"/>
-            <Tag title="Drama"/>
-            <Tag title="Família"/>
-
+            <div>
+                <Tag title="Ficção Científica"/>
+                <Tag title="Drama"/>
+                <Tag title="Família"/>
+            </div>
         </Container>
     );
 }

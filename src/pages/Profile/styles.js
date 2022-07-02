@@ -21,9 +21,11 @@ export const Container = styled.div`
 
         display: flex;
         justify-content: space-between;
-    }
 
-    
+        > a{
+            color: ${({ theme }) => theme.colors.pink};
+        }
+    }
 `;
 
 export const Form = styled.form`

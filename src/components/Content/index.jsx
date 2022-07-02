@@ -1,16 +1,20 @@
-import { Button } from "../Button";
-import { Container } from "./styles";
+import { Container, Button } from "./styles";
 import { RiAddLine, RiStarFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 import { Card } from "../Card";
 
 export function Content(){
     return(
         <Container>
             <h1>Meus filmes</h1>
-            <Button
-                icon={RiAddLine}
-                title="Adicionar filme"
-            />
+            <Link to="/createmovie">
+                <Button>
+                    <RiAddLine/>
+                    
+                        Adicionar filme
+                    
+                </Button>
+            </Link>
 
             <Card
                 title="Insterestellar" icon={RiStarFill}

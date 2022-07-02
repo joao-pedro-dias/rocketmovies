@@ -1,8 +1,7 @@
 import { Container, Content, Form, Section } from './styles';
 import { Header } from "../../components/Header";
-import { Link } from "../../components/Link";
+import { Link } from "react-router-dom";
 import { Input } from "../../components/Input";
-import { Button } from "../../components/Button";
 import { RiArrowLeftLine } from "react-icons/ri";
 import { NoteItem } from '../../components/NoteItem';
 
@@ -12,10 +11,10 @@ export function CreateMovie(){
             <Header/>
 
             <Content>
-                <Link
-                    icon={RiArrowLeftLine}
-                    title="Voltar"
-                />
+                <Link to="/">
+                    <RiArrowLeftLine/>
+                    Voltar
+                </Link>
 
                 <h1>Novo filme</h1>
 
@@ -36,23 +35,21 @@ export function CreateMovie(){
 
                 </Form>
 
-                    <Section>
-                        <span>Marcadores</span>
+                <span>Marcadores</span>
 
-                        <div>
-                            <NoteItem value="React"/>
-                            <NoteItem isNew/>
-                            <NoteItem/>
-                        </div>
-                        
-                    </Section>
+                <Section>
 
-                    <Button
-                        title="Excluir filme"
-                    />
-                    <Button
-                        title="Salvar alterações"
-                    />
+                    <div className='tags'>
+                        <NoteItem value="React" />
+                        <NoteItem isNew/>
+                    </div>
+                    
+                </Section>
+                    
+                <div className='section-button'>
+                    <button className='delete'>Excluir filme</button>
+                    <button className='save'>Salvar alterações</button>
+                </div>
 
             </Content>
         </Container>

@@ -9,16 +9,16 @@ export function NoteItem({ isNew, value, onClick, ...rest}){
                 value={value}
                 readOnly={!isNew}
                 {...rest}
-            >
-
-            </input>
-            
+            />
+                
             <button
-                type="button"
-                onClick={onClick}
+            type="button"
+            onClick={onClick}
             >
                 { isNew ? <RiAddLine/> : <RiCloseLine/>}
             </button>
+            
+            
 
         </Container>
     );

@@ -34,9 +34,11 @@ export function MoviePreview(){
 
                         Por João Pedro Dias
                     </span>
+                    
                     <span>
-                        <RiTimeLine className="icon"/>
-                        23/05/22 às 08:00</span>
+                        <RiTimeLine fill="pink" className="icon"/>
+                        23/05/22 às 08:00
+                    </span>
                 </div>
 
                 <div className="tags">

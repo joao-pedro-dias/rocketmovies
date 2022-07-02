@@ -1,7 +1,7 @@
 import { Container, Form, ButtonForm, Background } from "./styles";
 import { Input } from "../../components/Input";
 import { RiUser3Line, RiArrowLeftLine, RiMailLine, RiLock2Line } from "react-icons/ri";
-import { Link } from "../../components/Link";
+import { Link } from "react-router-dom";
 
 export function SignUp(){
     return(
@@ -35,10 +35,10 @@ export function SignUp(){
                     Cadastrar
                 </ButtonForm>
 
-                <Link
-                    icon={RiArrowLeftLine}
-                    title="Voltar para o login"
-                />
+                <Link to="/">
+                    <RiArrowLeftLine/>
+                    Voltar para o login
+                </Link>
 
             </Form>
 

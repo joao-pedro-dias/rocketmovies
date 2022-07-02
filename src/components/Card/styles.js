@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+    
     margin-top: 10px;
     padding: 32px;
 
     width: 100%;
-    height: 230px;
+    height: auto;
     
     background: #272024;
     border-radius: 10px;
@@ -18,5 +19,11 @@ export const Container = styled.div`
     > p{
         padding-top: 15px;
         padding-bottom: 15px;
+    }
+
+    > div{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 `;

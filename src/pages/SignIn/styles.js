@@ -36,7 +36,7 @@ export const Form = styled.form`
         display: flex;
         align-items: flex-start;
         font-size: 14px;
-        color: ${({ theme }) => theme.colors.white}
+        color: #CAC4CF;
     }
 
     > a{

@@ -1,4 +1,5 @@
 import { Container, Form, Background } from "./styles";
+import { Link } from "react-router-dom";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { RiMailLine, RiLock2Line } from "react-icons/ri";
@@ -29,9 +30,9 @@ export function SignIn(){
                     title="Entrar"
                 />
 
-                <a href="#">
+                <Link to="/register">
                     Criar conta
-                </a>
+                </Link>
             </Form>
 
             <Background/>

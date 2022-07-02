@@ -1,5 +1,5 @@
 import { Container, Form, Avatar } from "./styles";
-import { Link } from "../../components/Link";
+import { Link } from "react-router-dom";
 import { RiArrowLeftLine, RiCameraLine, RiMailLine, RiUser3Line, RiLock2Line } from "react-icons/ri";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
@@ -8,10 +8,10 @@ export function Profile(){
     return(
         <Container>
             <header>
-                <Link
-                    icon={RiArrowLeftLine}
-                    title="Voltar"
-                />
+                <Link to="/">
+                    <RiArrowLeftLine/>
+                    Voltar
+                </Link>
             </header>
 
             <Avatar>
