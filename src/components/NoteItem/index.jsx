@@ -17,8 +17,6 @@ export function NoteItem({ isNew, value, onClick, ...rest}){
             >
                 { isNew ? <RiAddLine/> : <RiCloseLine/>}
             </button>
-            
-            
 
         </Container>
     );
