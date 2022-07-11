@@ -2,10 +2,12 @@ import { Container, Profile  } from './styles';
 import { Input } from '../Input';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../hooks/auth';
+// import { useState } from 'react';
 
 export function Header(){
 
     const { signOut } = useAuth();
+    // const [name, setName] = useState(user.name);
 
     return(
         <Container>
@@ -19,7 +21,9 @@ export function Header(){
 
                 <div>
                     <Link to="/profile">
-                        <strong>João Pedro Dias</strong>
+                        <strong>
+                            João Pedro Dias
+                        </strong>
                     </Link>
                     <button onClick={signOut}>Sair</button>
                 </div>
