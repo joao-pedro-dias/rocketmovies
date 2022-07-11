@@ -38,8 +38,9 @@ export const Profile = styled.div`
         margin-right: 20px;
         line-height: 24px;
         
-        span{
-            width: 150px;
+        button{
+            background-color: ${({ theme }) => theme.colors.background_800};
+            border: transparent;
             font-size: 14px;
             color: ${({ theme }) => theme.colors.gray_100};
             display: flex;
