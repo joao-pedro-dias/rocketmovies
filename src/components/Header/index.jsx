@@ -2,12 +2,15 @@ import { Container, Profile  } from './styles';
 import { Input } from '../Input';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../hooks/auth';
+import { api } from '../../services/api';
 // import { useState } from 'react';
 
 export function Header(){
 
-    const { signOut } = useAuth();
+    const { signOut, user } = useAuth();
     // const [name, setName] = useState(user.name);
+
+    const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
 
     return(
         <Container>
@@ -22,14 +25,14 @@ export function Header(){
                 <div>
                     <Link to="/profile">
                         <strong>
-                            João Pedro Dias
+                            {user.name}
                         </strong>
                     </Link>
                     <button onClick={signOut}>Sair</button>
                 </div>
                 
                 <img
-                    src="https://github.com/joao-pedro-dias.png"
+                    src={avatarUrl}
                     alt="Foto do usuário"
                 />
             </Profile>
