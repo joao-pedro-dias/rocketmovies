@@ -5,7 +5,7 @@ export const Container = styled.div`
     > input{
         border: ${({ theme, isNew }) => isNew ? `1px dashed ${theme.colors.gray_300}` : "none" };
         margin: 16px 0 16px 16px;
-        width: 100px;
+        width: 200px;
         border-radius: 10px 0 0 10px;
         height: 56px;
         background: ${({ theme }) => theme.colors.background_900};

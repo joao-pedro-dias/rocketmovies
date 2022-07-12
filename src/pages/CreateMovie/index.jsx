@@ -4,8 +4,22 @@ import { Link } from "react-router-dom";
 import { Input } from "../../components/Input";
 import { RiArrowLeftLine } from "react-icons/ri";
 import { NoteItem } from '../../components/NoteItem';
+import { useState } from 'react';
 
 export function CreateMovie(){
+
+    const [tags, setTags] = useState([]);
+    const [newTag, setNewTag] = useState("");
+
+    function handleAddTag(){
+        setTags(prevState => [...prevState, newTag]);
+        setNewTag("");
+    }
+
+    function handleRemoveTag(deleted){
+        setTags(prevState => prevState.filter(tag => tag !== deleted));
+    }
+
     return(
         <Container>
             <Header/>
@@ -38,10 +52,25 @@ export function CreateMovie(){
                 <span>Marcadores</span>
 
                 <Section>
-
+                    
                     <div className='tags'>
-                        <NoteItem value="React" />
-                        <NoteItem isNew/>
+                        {
+                            tags.map((tag, index) => (
+                                <NoteItem
+                                    key={String(index)}
+                                    value={tag}
+                                    onClick={() => handleRemoveTag(tag)}
+                                />
+                            ))
+                        }
+
+                        <NoteItem
+                            isNew
+                            placeholder="Nova tag"
+                            onChange={e => setNewTag(e.target.value)}
+                            value={newTag}
+                            onClick={handleAddTag}
+                        />
                     </div>
                     
                 </Section>

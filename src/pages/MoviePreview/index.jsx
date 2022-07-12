@@ -5,6 +5,9 @@ import { RiArrowLeftLine, RiStarFill, RiTimeLine } from "react-icons/ri";
 import { Tag } from "../../components/Tag";
 
 export function MoviePreview(){
+
+    
+
     return(
         <Container>
             <Header/>
