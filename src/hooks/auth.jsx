@@ -74,12 +74,23 @@ function AuthProvider({ children }){
         }
     }, []);
 
+    async function userNotes( { notes }){
+        try {
+
+            await api.get("/movie_notes", notes);
+            
+        } catch (error) {
+            console.log("deu ruim!")
+        }
+    }
+
     return(
         <AuthContext.Provider value={{
             signIn,
             user: data.user,
             updateProfile,
-            signOut
+            signOut,
+            userNotes
             }}
         >
             {children}

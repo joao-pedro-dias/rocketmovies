@@ -13,7 +13,7 @@ export function CreateMovie(){
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
-    const [note, setNote] = useState("");
+    const [rating, setRating] = useState("");
 
     const [tags, setTags] = useState([]);
     const [newTag, setNewTag] = useState("");
@@ -29,15 +29,13 @@ export function CreateMovie(){
         setTags(prevState => prevState.filter(tag => tag !== deleted));
     }
 
-
     async function handleNewMovie(){
 
-        
         if(!title){
             return alert("Digite o título do filme");
         }
         
-        if(!note){
+        if(!rating){
             return alert("Digite a nota do filme");
         }
 
@@ -49,11 +47,11 @@ export function CreateMovie(){
             return alert("Você deixou uma tag no campo para adicionar, mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio");
         }
 
-        //alterar de notes para movie        
+        //alterar de notes para movie
         await api.post("/notes", {
             title,
-            note,
             description,
+            rating,
             tags
         });
 
@@ -82,7 +80,7 @@ export function CreateMovie(){
                         />
                         <Input
                             placeholder="Sua nota (de 0 a 5)"
-                            onChange={e => setNote(e.target.value)}
+                            onChange={e => setRating(e.target.value)}
                         />
                     </div>
 

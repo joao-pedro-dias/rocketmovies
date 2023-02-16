@@ -19,6 +19,7 @@ export const Container = styled.div`
     > p{
         padding-top: 15px;
         padding-bottom: 15px;
+        line-height: 20px;
     }
 
     > div{

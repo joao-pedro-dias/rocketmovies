@@ -1,23 +1,20 @@
 import { Container } from "./styles";
 import { Tag } from "../Tag";
+import { StarRating } from "../StarRating";
 
-export function Card( { title, icon: Icon, text }){
+export function Card( { title, icon: Icon, text, tags = [], rating } ){
     return(
         <Container>
             <h2>{title}</h2>
 
-            <Icon fill={"pink"} size={20}/>
-            <Icon fill={"pink"} size={20}/>
-            <Icon fill={"pink"} size={20}/>
-            <Icon fill={"pink"} size={20}/>
-            <Icon fill={"dark"} size={20}/>
+            <StarRating rating={rating}/>
 
             <p>{text}</p>
 
             <div>
-                <Tag title="Ficção Científica"/>
-                <Tag title="Drama"/>
-                <Tag title="Família"/>
+                {tags.map(tag => (
+                    <Tag key={tag.id} title={tag.name}/>
+                ))}
             </div>
         </Container>
     );
