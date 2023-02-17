@@ -64,7 +64,7 @@ export function CreateMovie(){
             <Header/>
 
             <Content>
-                <Link to="/">
+                <Link to="/createmovie">
                     <RiArrowLeftLine/>
                     Voltar
                 </Link>

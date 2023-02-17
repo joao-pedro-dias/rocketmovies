@@ -63,5 +63,11 @@ export const Content = styled.div`
             text-align: justify;
         }
     }
+
+    > a{
+        color: ${({ theme }) => theme.colors.pink};
+        line-height: 50px;
+    }
+
 `;
 

@@ -1,11 +1,14 @@
 import { Container } from "./styles";
 import { Tag } from "../Tag";
 import { StarRating } from "../StarRating";
+import { Link } from "react-router-dom";
 
-export function Card( { title, icon: Icon, text, tags = [], rating } ){
+export function Card( { id, title, text, tags = [], rating } ){
     return(
         <Container>
+        <Link to={`/moviepreview/${id}`}>
             <h2>{title}</h2>
+        </Link>
 
             <StarRating rating={rating}/>
 

@@ -27,4 +27,12 @@ export const Container = styled.div`
         flex-direction: row;
         flex-wrap: wrap;
     }
+    > a{
+        color: ${({ theme }) => theme.colors.white};
+        line-height: 50px;
+    }
+
+    > a:hover{
+        color: ${({ theme }) => theme.colors.pink};
+    }
 `;

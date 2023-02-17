@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 export function Content(){
 
-    const [ movies, setMovies] = useState([]);
+    const [ movies, setMovies ] = useState([]);
 
     useEffect(() => {
         api.get('/notes').then(response => {
@@ -37,12 +37,14 @@ export function Content(){
             {movies.map(movie => (
                 <Card
                     key={movie.id}
+                    id={movie.id}
                     title={movie.title}
                     rating={movie.rating}
                     text={movie.description}
                     tags={movie.tags}
                 />
             ))}
+            
             
 
         </Container>
