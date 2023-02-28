@@ -63,6 +63,14 @@ export function CreateMovie(){
         navigate("/");
     }
 
+    function handleClearAll() {
+        setTitle("");
+        setDescription("");
+        setRating("");
+        setTags([]);
+        setNewTag("");
+    }
+
     return(
         <Container>
             <Header/>
@@ -80,16 +88,19 @@ export function CreateMovie(){
                     <div className='inputs'>
                         <Input
                             placeholder="Título"
+                            value={title}
                             onChange={e => setTitle(e.target.value)}
                         />
                         <Input
                             placeholder="Sua nota (de 0 a 5)"
+                            value={rating}
                             onChange={e => setRating(e.target.value)}
                         />
                     </div>
 
                     <textarea
                         placeholder="Observações"
+                        value={description}
                         onChange={e => setDescription(e.target.value)}
                     />
 
@@ -122,7 +133,10 @@ export function CreateMovie(){
                 </Section>
                     
                 <div className='section-button'>
-                    <button className='delete'>Excluir filme</button>
+                    <button
+                        className='delete'
+                        onClick={handleClearAll}
+                    >Limpar tudo</button>
                     <button
                         className='save'
                         onClick={handleNewMovie}
