@@ -69,5 +69,23 @@ export const Content = styled.div`
         line-height: 50px;
     }
 
+    button{
+        width: 100%;
+        height: 56px;
+        padding: 0 16px;
+        margin-top: 16px;
+        
+        font-weight: 500;
+        font-size: 16px;
+        
+        border: 0;
+        border-radius: 10px;
+    }
+
+    .delete{
+        background-color: #0D0C0F;
+        color: ${({ theme }) => theme.colors.pink};
+    }
+
 `;
 

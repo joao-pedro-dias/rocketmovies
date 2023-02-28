@@ -5,13 +5,15 @@ import { Card } from "../Card";
 import { api } from "../../services/api";
 import { useEffect, useState } from "react";
 
-export function Content(){
+export function Content({ searchTerm }){
 
     const [ movies, setMovies ] = useState([]);
+    const [filteredMovies, setFilteredMovies] = useState([]);
 
     useEffect(() => {
-        api.get('/notes').then(response => {
-            const sortedMovies = response.data.sort((a, b) => {
+        const query = searchTerm ? `${searchTerm}` : "";
+        api.get(`/notes/${query}`).then(response => {
+            const sortedMovies = Array.isArray(response.data) ? response.data.sort((a, b) => {
                 if(a.created_at > b.created_at){
                     return -1;
                 } else if(a.created_at < b.created_at) {
@@ -19,11 +21,22 @@ export function Content(){
                 } else{
                     return 0;
                 }
-            });
+            }) : response.data;
             setMovies(sortedMovies);
         });
-    }, []);
 
+    }, [searchTerm]);
+
+    useEffect(() => {
+        const regex = new RegExp(searchTerm, "i");
+        if (Array.isArray(movies)) {
+          const filtered = movies.filter(movie => regex.test(movie.title));
+          setFilteredMovies(filtered);
+        }
+    }, [movies, searchTerm]);
+      
+    const displayedMovies = searchTerm === "" ? movies : filteredMovies || [];
+      
     return(
         <Container>
             <h1>Meus filmes</h1>
@@ -34,7 +47,7 @@ export function Content(){
                 </Button>
             </Link>
 
-            {movies.map(movie => (
+            {Array.isArray(displayedMovies) && displayedMovies.map(movie => (
                 <Card
                     key={movie.id}
                     id={movie.id}
@@ -45,8 +58,6 @@ export function Content(){
                 />
             ))}
             
-            
-
         </Container>
     );
 }

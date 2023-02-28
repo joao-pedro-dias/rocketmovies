@@ -4,20 +4,28 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../../hooks/auth';
 import { api } from '../../services/api';
 import avatarPlaceholder from '../../assets/avatar_placeholder.svg';
+import { useState } from "react";
 
-export function Header(){
+export function Header({ onSearch }){
 
     const { signOut, user } = useAuth();
-    // const [name, setName] = useState(user.name);
-
+    const [searchTerm, setSearchTerm] = useState("");
     const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
+
+    function handleInputChange(event) {
+      const { value } = event.target;
+      setSearchTerm(value);
+      onSearch(value);
+    }
 
     return(
         <Container>
             <h1>RocketMovies</h1>
             
             <Input className="input"
-                placeholder="Pesquisar pelo título"
+                placeholder="Pesquisar pelo título ou tag"
+                value={searchTerm}
+                onChange={handleInputChange}
             />
 
             <Profile>

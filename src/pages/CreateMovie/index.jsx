@@ -39,6 +39,10 @@ export function CreateMovie(){
             return alert("Digite a nota do filme");
         }
 
+        if(rating > 5 || rating == '' || isNaN(rating)){
+            return alert("A nota deve ser entre 0 a 5. Tente novamente!")
+        }
+
         if(!description){
             return alert("Digite a observação do filme");
         }
@@ -64,7 +68,7 @@ export function CreateMovie(){
             <Header/>
 
             <Content>
-                <Link to="/createmovie">
+                <Link to="/">
                     <RiArrowLeftLine/>
                     Voltar
                 </Link>

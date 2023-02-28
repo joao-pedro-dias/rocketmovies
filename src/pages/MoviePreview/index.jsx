@@ -1,8 +1,8 @@
 import { Container, Content } from "./styles";
 import { Header } from "../../components/Header";
-import { Link } from "react-router-dom";
-import { RiArrowLeftLine, RiStarFill, RiTimeLine } from "react-icons/ri";
-import { Tag } from "../../components/Tag";
+import { Link  } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import { RiArrowLeftLine, RiTimeLine } from "react-icons/ri";
 import { api } from "../../services/api";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -14,12 +14,33 @@ export function MoviePreview(){
 
     const [ movie, setMovie ] = useState([]);
     const { id } = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
         api.get(`/notes/${id}`).then(response => {
             setMovie(response.data);    
         });
     }, [id]);
+
+    useEffect(() => {
+        api.get(`/notes/${id}`).then(response => {
+            setMovie(response.data);    
+        });
+    }, [id]);
+
+    const handleDeleteMovie = async () => {
+        const shouldDelete = window.confirm("Tem certeza que deseja excluir este filme?");
+        
+        if (shouldDelete) {
+          try {
+            await api.delete(`/notes/${id}`);
+            navigate("/");
+
+          } catch (error) {
+            console.log(error);
+          }
+        }
+      };      
 
     return(
         <Container>
@@ -54,16 +75,12 @@ export function MoviePreview(){
 
                 </div>
 
-                {/* <div className="tags">{tag.name}</div> */}
-
-                {/* <div>
-                    {tags.map(tag => (
-                        <Tag key={tag.id} title={tag.name}/>
-                    ))}
-                </div> */}
-
                 <div className="content">
                     <p>{movie.description}</p>
+                </div>
+
+                <div className='section-button'>
+                    <button className='delete' onClick={handleDeleteMovie}>Excluir filme</button>
                 </div>
 
             </Content>

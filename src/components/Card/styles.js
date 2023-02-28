@@ -20,6 +20,11 @@ export const Container = styled.div`
         padding-top: 15px;
         padding-bottom: 15px;
         line-height: 20px;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 300rem; /* exemplo de largura máxima */
     }
 
     > div{
