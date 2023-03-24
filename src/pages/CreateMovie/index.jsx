@@ -51,16 +51,22 @@ export function CreateMovie(){
             return alert("Você deixou uma tag no campo para adicionar, mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio");
         }
 
-        //alterar de notes para movie
-        await api.post("/notes", {
-            title,
-            description,
-            rating,
-            tags
-        });
+        try {
+            //alterar de notes para movie
+            await api.post("/notes", {
+                title,
+                description,
+                rating,
+                tags
+            });
+    
+            alert("Novo filme criado com sucesso!");
+            navigate("/");
 
-        alert("Novo filme criado com sucesso!");
-        navigate("/");
+        } catch(error) {
+            console.error(error);
+            alert("Erro ao criar novo filme. Tente novamente mais tarde.");
+        }
     }
 
     function handleClearAll() {
