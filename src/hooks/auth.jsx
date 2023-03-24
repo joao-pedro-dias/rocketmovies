@@ -19,9 +19,10 @@ function AuthProvider({ children }){
             setData({ user, token });
 
         }catch(error){
-            if(error.response){
-                alert(error.response.data.message)
-            } else{
+            if (error.response && error.response.data) {
+                const errorMessage = error.response.data.message || "Erro desconhecido";
+                alert(errorMessage);
+              } else {
                 alert("Não foi possível entrar");
             }
         }
